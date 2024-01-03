@@ -89,8 +89,8 @@ function! VimStreamEditingEditText()
     return
 endfunction
 
-if !exists('g:VimStreamEditing_enable')
-    let g:VimStreamEditing_enable = 0
-elseif g:VimStreamEditing_enable ==# 1
+if !exists('g:vim_stream_editing_enable')
+    let g:vim_stream_editing_enable = 0
+elseif g:vim_stream_editing_enable ==# 1
     call VimStreamEditingEnable()
 endif
