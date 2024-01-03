@@ -1,0 +1,64 @@
+*VimStreamEditing.txt*  Edit text without moving your cursor!
+
+Author:  lsp59862
+License: MIT
+URL: https://github.com/lsp59862/vim-stream-editing
+
+==============================================================================
+CONTENTS                                         *vim-stream-editing-contents*
+
+    1. Installation ........................ |vim-stream-editing-installation|
+    2. Usage ...................................... |vim-stream-editing-usage|
+    3. Options .................................. |vim-stream-editing-options|
+
+==============================================================================
+1. Introduction                              *vim-stream-editing-installation*
+
+    Have you ever made a typo in a word? Do you find it annoying to move your 
+cursor or use lengthy commands to correct it? This plug frees you from
+boxing with annoying cursor and complex commands!
+
+    To install , type 
+
+        Plug 'lsp59862/vim-stream-editing'
+    
+    in your .vimrc if you are using vim-plug.
+
+==============================================================================
+2. Usage                                            *vim-stream-editing-usage*
+
+    Hit <A-f> to use the plug in normal/insert mode if you enabled.
+
+    Then:
+
+        1. Enter text(pattern) to modify.
+        2. Hit [n/b] to choose the text.
+        3. Hit [i/r/a] to insert/replace/append.
+        4. Enter a new text.
+
+    You can exit the process by <Esc> whenever you want.
+
+==============================================================================
+3. Options                                        *vim-stream-editing-options*
+
+|g:vim_stream_editing_enable|                                              int
+
+Default: 0
+
+    Enable this plug when set it to 1.
+    
+    --------------[Attention]--------------
+    
+    It maps <A-f> as the shortcut key to activate the process:
+        
+        nnoremap <silent> <A-f> :call vim_stream_editing#EditText()<CR>
+        inoremap <silent> <A-f> <Esc>:call vim_stream_editing#EditText()<CR>a
+
+    If you don't want to use this key, please map the function directly and
+    set g:vim_stream_editing_enable to 0:
+        
+        nnoremap <silent> <Key> :call vim_stream_editing#EditText()<CR>
+        inoremap <silent> <Key> <Esc>:call vim_stream_editing#EditText()<CR>a
+        let g:vim_stream_editing_enable = 0
+
+
