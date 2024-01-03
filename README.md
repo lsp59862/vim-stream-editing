@@ -1,2 +1,2 @@
-# vin-stream-editing
+# vim-stream-editing
 Edit text without moving your cursor!
