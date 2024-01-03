@@ -1,11 +1,11 @@
 " vim-stream-editing.vim
 
-function! vim_stream_editing#Enable()
-    nnoremap <silent> <A-f> :call vim_stream_editing#EditText()<CR>
-    inoremap <silent> <A-f> <Esc>:call vim_stream_editing#EditText()<CR>a
+function! VimStreamEditingEnable()
+    nnoremap <silent> <A-f> :call VimStreamEditingEditText()<CR>
+    inoremap <silent> <A-f> <Esc>:call VimStreamEditingEditText()<CR>a
 endfunction
 
-function! vim_stream_editing#EditText()
+function! VimStreamEditingEditText()
     let cursor_pos = getpos('.')
     let line = getline('.')
     let str_to_find = input('Enter text to find: ')
@@ -89,8 +89,8 @@ function! vim_stream_editing#EditText()
     return
 endfunction
 
-if !exists('g:vim_stream_editing_enable')
-    let g:vim_stream_editing_enable = 0
-elseif g:vim_stream_editing_enable ==# 1
-    call vim_stream_editing#Enable()
+if !exists('g:VimStreamEditing_enable')
+    let g:VimStreamEditing_enable = 0
+elseif g:VimStreamEditing_enable ==# 1
+    call VimStreamEditingEnable()
 endif
