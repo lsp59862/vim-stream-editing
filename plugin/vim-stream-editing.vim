@@ -1,11 +1,12 @@
 " vim-stream-editing.vim
 
 function! VimStreamEditingEnable()
-    nnoremap <silent> <A-f> :call VimStreamEditingEditText()<CR>
-    inoremap <silent> <A-f> <Esc>:call VimStreamEditingEditText()<CR>a
+    nnoremap <silent> <A-f> :call VimStreamEditingEditText('n')<CR>
+    inoremap <silent> <A-f> <C-o>:call VimStreamEditingEditText('i')<CR>
 endfunction
 
-function! VimStreamEditingEditText()
+function! VimStreamEditingEditText(mode_local)
+
     let cursor_pos = getpos('.')
     let line = getline('.')
     let str_to_find = input('Enter text to find: ')
@@ -86,6 +87,10 @@ function! VimStreamEditingEditText()
 
     call setpos('.', cursor_pos)
 
+    if a:mode_local == 'i'
+        normal! a
+    endif
+
     return
 endfunction
 
@@ -94,3 +99,4 @@ if !exists('g:vim_stream_editing_enable')
 elseif g:vim_stream_editing_enable ==# 1
     call VimStreamEditingEnable()
 endif
+
