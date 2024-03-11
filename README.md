@@ -42,14 +42,14 @@ You can exit the process by <Esc> whenever you want.
 **g:vim_stream_editing_enable** maps <A-f> as the shortcut key to activate the process:
 
 ```
-nnoremap <silent> <A-f> :call VimStreamEditingEditText()<CR>
-inoremap <silent> <A-f> <Esc>:call VimStreamEditing#EditText()<CR>a      
+nnoremap <silent> <A-f> :call VimStreamEditingEditText('n')<CR>
+inoremap <silent> <A-f> <Esc>:call VimStreamEditing#EditText('i')<CR>     
 ```
 
 If you **don't** want to use this key, please map the function directly and **set g:vim_stream_editing_enable to 0** :
 
-    nnoremap <silent> <Key> :call VimStreamEditingEditText()<CR>
-    inoremap <silent> <Key> <Esc>:call VimStreamEditingEditText()<CR>a
+    nnoremap <silent> <Key> :call VimStreamEditingEditText('n')<CR>
+    inoremap <silent> <Key> <Esc>:call VimStreamEditingEditText('i')<CR>
     let g:vim_stream_editing_enable = 0
 
 Known Issues
