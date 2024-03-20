@@ -27,7 +27,7 @@ Hit <A-f>(Alt+f) to use the plug in normal/insert mode if you enabled. Then:
 3. Hit [i/r/a] to insert/replace/append.
 4. Enter a new text.
 
-You can exit the process by <Esc> whenever you want.
+You can exit the process by [Esc] whenever you want.
 
 ## Options
 
